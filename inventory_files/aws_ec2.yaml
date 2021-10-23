@@ -1,9 +1,9 @@
 ---
 plugin: aws_ec2
 regions:
- - us-east-2
+  - us-east-2
 hostnames:
- - ip-address
+  - ip-address
 keyed-groups:
- - key: tags.Name
- - prefix: tag_Name
+  - key: tags.Name
+  - prefix: tag_Name
