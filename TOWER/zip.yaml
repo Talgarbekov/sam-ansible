@@ -1,0 +1,12 @@
+--- # Connection
+# ansible-playbook user.yaml 
+# link: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
+- name: Install packages
+  hosts: all
+  tasks: 
+  - name: zip files over 90 days
+    shell:  find  /var/log   -type f   -name "*.log" -mtime +90    -exec   gzip -v {}  \; 
+    
+  - name: zip files over 1G
+    shell:  find  /var/log   -type f   -name "*.log" -size +1G    -exec   gzip -v {}  \; 
+    
