@@ -2,13 +2,10 @@
 # ansible-playbook user.yaml 
 # link: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
 - name: Install packages
-  hosts: localhost
-  become: true
-  become_method: sudo 
-  user: ec2-user
+  hosts: all
   tasks: 
   - name: Add users
-    ansible.builtin.user:
+    user:
       name: "{{ item }}"
       state: present
     with_items:
