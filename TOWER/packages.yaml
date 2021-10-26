@@ -1,0 +1,14 @@
+--- # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html#id1
+- name: Install packages
+  hosts: all
+  tasks: 
+  - name: Install packages 
+    package:
+      name: "{{ item }}"
+      state: present            #absent       #latest
+    with_items:
+    - telnet
+    - wget
+    - elinks
+    - unzip
+     
